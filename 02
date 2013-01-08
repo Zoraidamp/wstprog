@@ -1,0 +1,11 @@
+zad.1
+#include <stdio.h> 
+ void main()
+ {
+  int a,b,c;
+  double delta;
+  printf("program ten liczy deltę funkcji kwadratowej, podaj czynniki: \n ax^2+bx+c \n (a,b,c):");
+  scanf("%d%d%d",&a,&b,&c);
+  delta=b*b-4*a*c;
+  printf("delta wynosi: %lf \n", delta); 
+}
