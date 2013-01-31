@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[])
+{
+FILE *plik, *plik2;
+int c;
+char x;
+if(argc != 3)
+{
+printf("Blad podaj nazwe pliku !!!\n");
+exit(1);
+}
+plik = fopen(argv[1],"r");
+plik2= fopen(argv[2],"w");
+if(plik == NULL)
+{
+printf("Blad otwarcia pliku 1 ...\n");
+exit(1);
+}
+
+if(plik == NULL)
+{
+printf("Blad otwarcia pliku 2 ...\n");
+exit(1);
+}
+printf ("jaką literę chcesz wyeliminować? \n");
+scanf ("%c", &x);
+while((c=fgetc(plik)) != EOF)
+{
+  if (c!=x) fputc((int)c,plik2);
+}
+printf("\n");
+fclose(plik);
+fclose(plik2);
+return (0);
+}
